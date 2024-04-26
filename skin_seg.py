@@ -255,7 +255,7 @@ class Skin_Detect():
 
 
 if __name__ == "__main__":
-    image_path = f'./dataset/test/0.jpg'
+    image_path = f'./dataset/test/1.jpg'
     image = cv2.imread(image_path)
     try:
         img = np.array(image, dtype=np.uint8)

@@ -61,15 +61,17 @@ def reconstruct(img, descirptor_in_use):
     contour_reconstruct = contour_reconstruct.astype(np.int32, copy=False)
 
     black_np = np.ones(img.shape, np.uint8)  # 创建黑色幕布
-    black = cv2.drawContours(black_np, contour_reconstruct, -1, (255, 255, 255), 1)  # 绘制白色轮廓
+    black = cv2.drawContours(black_np, contour_reconstruct, -1, (255, 255, 255), -1)  # 绘制白色轮廓
     cv2.imshow("contour_reconstruct", black)
-    # cv2.imwrite('recover.png',black)
+    cv2.imwrite('./dataset/test/recover.png',black)
     return black
 
 
 if __name__ == '__main__':
-    image_path = f'./dataset/test/m4_0.jpg'
+    image_path = f'./dataset/test/1.jpg'
     roi = cv2.imread(image_path)
     ret, descirptor_in_use = fourierDesciptor(roi)
+    cv2.imwrite('./dataset/test/fourierDesciptor.png', ret)
+    print(descirptor_in_use)
     reconstruct(ret, descirptor_in_use)
     cv2.waitKey(0)

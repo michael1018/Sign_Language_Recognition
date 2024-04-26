@@ -28,5 +28,7 @@ def test_model_method2():
 
 if __name__ == '__main__':
     # test_model_method1()
-    test_model_method2()
-    cv2.waitKey(0)
+    # test_model_method2()
+    # cv2.waitKey(0)
+    test = {"C":1,"gamma":0.125,"kernel":"linear"}
+    print(test)

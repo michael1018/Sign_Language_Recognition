@@ -22,7 +22,7 @@ def rotate(image, scale=0.9):
     return image
 
 
-if __name__ == "__main__":
+def increase_data():
     for i in range(1, 11):
         cnt = 21  # 计数
         for j in range(1, 21):
@@ -46,4 +46,10 @@ if __name__ == "__main__":
             print(i, '_', j, '完成')
 
 
-
+if __name__ == "__main__":
+    image_path = f'./dataset/test/0.jpg'
+    roi = cv2.imread(image_path)
+    img_rotation = rotate(roi)  # 旋转
+    cv2.imwrite(f'./dataset/test/rotate_0.jpg', img_rotation)
+    img_flip = cv2.flip(roi, 1)  # 翻转
+    cv2.imwrite(f'./dataset/test/flip_0.jpg', img_flip)

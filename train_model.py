@@ -5,6 +5,7 @@ import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+from sklearn.cluster import k_means
 
 path = "./feature/train/"
 model_path = "./model/"
@@ -63,4 +64,4 @@ def save_model(model, model_name):
 if __name__ == "__main__":
     data, labels = get_train_data()
     model = train_model()
-    save_model(model=model, model_name='RandomForest')
+    # save_model(model=model, model_name='RandomForest')
